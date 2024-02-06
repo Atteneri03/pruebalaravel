@@ -12,6 +12,7 @@
     <th>Nombre</th>
     <th>Precio</th>
     <th>Stock</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -21,6 +22,15 @@
         <td><a href="{{route('article.show' , $article)}}">{{$article->name}}</a></td>
         <td>{{$article->price}}</td>
         <td>{{$article->stock}}</td>
+        <td>
+            <a href="route('article.edit' , $article)" style="background-color:  rgb(255, 135, 135); border-radius: 10px; padding: 2px">Editar
+            </a>
+            <form action="{{route('article.destroy',$article)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" style="background-color:  rgb(255, 135, 135); border-radius: 10px; padding: 2px" value="Eliminar">
+            </form>
+        </td>
       </tr>
     @endforeach
   </tbody>

@@ -1,14 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>Crear un Articulo</h1>
-<form action="{{route('article.store')}}" method="POST">
+<h1>Editando el Articulo {{$article->id}}</h1>
+<form action="{{route('article.edit')}}" method="POST">
     @csrf
+    @method("PUT")
     <p>
         <label for="name">Nombre</label>
         <input type="text" name="name"
         class="@error('name') border-2 border-red-600 @enderror"
-        value="{{old('name')}}">
+        value="{{old('name' , $article->name)}}">
         @error('name')
             <div class="bg-red-400">{{$message}}</div>
         @enderror
@@ -17,7 +18,7 @@
         <label for="price">Precio</label>
         <input type="text" step="0.01" name="price"
         class="@error('name') border-2 border-red-600 @enderror"
-        value="{{old('price')}}">
+        value="{{old('price' , $article->price)}}">
         @error('price')
         <div class="bg-red-400">{{$message}}</div>
     @enderror
@@ -26,14 +27,14 @@
         <label for="stock">Stock</label>
         <input type="text" name="stock"
         class="@error('name') border-2 border-red-600 @enderror"
-        value="{{old('stock')}}">
+        value="{{old('stock' , $article->stock)}}">
         @error('stock')
         <div class="bg-red-400">{{$message}}</div>
     @enderror
     </p>
 
     <p>
-        <input type="submit" value="Crear">
+        <input type="submit" value="Modificar">
     </p>
 
 </form>

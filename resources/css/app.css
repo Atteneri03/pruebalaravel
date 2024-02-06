@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind borders;
+
+/* .is-invalid{
+    @apply border-color: red;
+} */
