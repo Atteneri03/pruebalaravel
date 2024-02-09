@@ -33,6 +33,16 @@
     </p>
 
     <p>
+        <label for="category_id">Id Categoría</label>
+        <input type="text" name="category_id"
+        class="@error('name') border-2 border-red-600 @enderror"
+        value="{{old('category_id')}}">
+        @error('category_id')
+        <div class="bg-red-400">{{$message}}</div>
+    @enderror
+    </p>
+
+    <p>
         <input type="submit" value="Crear">
     </p>
 

@@ -12,6 +12,7 @@
     <th>Nombre</th>
     <th>Precio</th>
     <th>Stock</th>
+    <th>Categoría</th>
     <th></th>
   </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><a href="{{route('article.show' , $article)}}">{{$article->name}}</a></td>
         <td>{{$article->price}}</td>
         <td>{{$article->stock}}</td>
+        <td>{{$article->category()->first()->name}}</td>
         <td>
             <a href="route('article.edit' , $article)" style="background-color:  rgb(255, 135, 135); border-radius: 10px; padding: 2px">Editar
             </a>

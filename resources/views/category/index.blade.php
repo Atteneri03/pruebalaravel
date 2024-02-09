@@ -8,7 +8,9 @@
 <table>
   <thead>
   <tr>
+    <th>Id</th>
     <th>Nombre</th>
+    <th>Numero de articulos</th>
     <th></th>
   </tr>
   </thead>
@@ -18,6 +20,7 @@
         <td>{{$category->id}}</td>
         <td><a href="{{route('category.show' , $category)}}">{{$category->name}}</a></td>
 
+        <td>{{$category->articles()->count()}}</td>
        <td>
             <a href="{{route('category.edit' , $category)}}" style="background-color:  rgb(255, 135, 135); border-radius: 10px; padding: 2px">Editar
             </a>

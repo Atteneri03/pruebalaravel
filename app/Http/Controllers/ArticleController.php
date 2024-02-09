@@ -39,6 +39,7 @@ class ArticleController extends Controller
         $article->name = $request->input('name');
         $article->price = $request->input('price');
         $article->stock = $request->input('stock');
+        $article->category_id = $request->input('category_id');
         $article->save();
 
         return redirect()->route('article.index')->with('success','Articulo creado correctamente');
